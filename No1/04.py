@@ -1,9 +1,5 @@
-def remove_punctuation(text):
-    text = ''.join(tmp if tmp.isalpha() or tmp.isspace() else ' ' for tmp in text)
-    return text
-
 main_text = "Hi He Lied Because Boron Could Not Oxidize Fluorine. New Nations Might Also Sign Peace Security Clause. Arthur King Can."
-text = remove_punctuation(main_text)
+text = ''.join(tmp if tmp.isalpha() or tmp.isspace() else ' ' for tmp in main_text)
 words = text.split()
 
 result_dict = {}
