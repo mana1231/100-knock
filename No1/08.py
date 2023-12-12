@@ -1,7 +1,7 @@
 def cipher(text):
     result = ""
     for word in text:
-        if word.islower():
+        if word.islower():　# re.findall('[a-z]+', s)とした方が数字も含まれず英語小文字だけになる。
             result += chr(219 - ord(word))
         else:
             result += word
