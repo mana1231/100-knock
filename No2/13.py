@@ -1,9 +1,7 @@
-with open('col1.txt', 'r') as col1_file:
-    col1_lines = col1_file.readlines()
+import pandas as pd
 
-with open('col2.txt', 'r') as col2_file:
-    col2_lines = col2_file.readlines()
+col1 = pd.read_csv('col1.txt', header=None, names=['name'])
+col2 = pd.read_csv('col2.txt', header=None, names=['sex'])
 
-with open('merge_with_tab.txt', 'w') as merged_file:
-    for col1, col2 in zip(col1_lines, col2_lines):
-        merged_file.write(f"{col1.rstrip()}\t{col2.rstrip()}\n")
+merged_data = pd.concat([col1, col2], axis=1)
+merged_data.to_csv('merged.txt', header=None, index=False, sep='\t')

@@ -1,7 +1,5 @@
-with open('popular-names.txt', 'r') as file:
-    lines = file.readlines()
-    
-line_count = len(lines)
-print("Pythonプログラムによる行数:", line_count)
+import pandas as pd
 
-# UNIX : wc -l popular-names.txt
+data = pd.read_table('popular-names.txt', names=["name", "sex", "cnt", "year"])
+
+print(len(data))
