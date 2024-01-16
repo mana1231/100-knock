@@ -14,3 +14,9 @@ except ValueError:
 data = pd.read_table('popular-names.txt', names=["name", "sex", "num", "year"])
 
 print(data.tail(N))
+
+'''
+tail -n N popular-names.txt
+
+-n N : 末尾からN行だけを表示するNを指定
+'''

@@ -5,3 +5,7 @@ col2 = pd.read_csv('col2.txt', header=None, names=['sex'])
 
 merged_data = pd.concat([col1, col2], axis=1)
 merged_data.to_csv('merged.txt', header=None, index=False, sep='\t')
+
+'''
+paste col1.txt col2.txt > merged.txt
+'''

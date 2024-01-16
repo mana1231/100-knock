@@ -18,3 +18,9 @@ for i, chunk in enumerate(chunks):
     print(f"=== Chunk {i + 1} ===")
     print(chunk)
     print()
+
+'''
+split -l N popular-names.txt
+
+-l N : N分割する際のNを指定
+'''
