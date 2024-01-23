@@ -8,7 +8,7 @@ def load_json_for_uk():
     return uk_article
 
 def extract_sections(text):
-    section_pattern = re.compile(r'(={2,})([^=]+)\1') # (==+) -> ={2,}
+    section_pattern = re.compile(r'(==+)([^=]+)\1')
     matches = section_pattern.findall(text)
 
     sections = [(match[1].strip(), len(match[0]) - 1) for match in matches]
