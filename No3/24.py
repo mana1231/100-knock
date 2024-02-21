@@ -13,8 +13,12 @@ def extract_media_files(text):
 
     return media_files
 
-text_uk = load_json_for_uk()
-media_files = extract_media_files(text_uk)
+def main():
+    text_uk = load_json_for_uk()
+    media_files = extract_media_files(text_uk)
 
-for file in media_files:
-    print(file)
+    for file in media_files:
+        print(file)
+
+if __name__ == '__main__':
+    main()

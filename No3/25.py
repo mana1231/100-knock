@@ -17,7 +17,11 @@ def extract_info(text):
 
     return info_dict
 
-text_uk = load_json_for_uk()
-info_dict = extract_info(text_uk)
-for key, value in info_dict.items():
-    print(f"{key} : {value}")
+def main():
+    text_uk = load_json_for_uk()
+    info_dict = extract_info(text_uk)
+    for key, value in info_dict.items():
+        print(f"{key} : {value}")
+
+if __name__ == '__main__':
+    main()

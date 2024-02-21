@@ -7,10 +7,13 @@ def load_json_for_uk():
 
     return uk_article
 
-text_uk = load_json_for_uk()
+def main():
+    text_uk = load_json_for_uk()
+    category_name_pattern = re.compile(r'\[\[Category:(.*?)(?:\|.*?)?\]\]')
+    category_names = category_name_pattern.findall(text_uk)
 
-category_name_pattern = re.compile(r'\[\[Category:(.*?)(?:\|.*?)?\]\]')
-category_names = category_name_pattern.findall(text_uk)
+    for category_name in category_names:
+        print(category_name)
 
-for category_name in category_names:
-    print(category_name)
+if __name__ == '__main__':
+    main()

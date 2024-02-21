@@ -15,8 +15,12 @@ def extract_sections(text):
 
     return sections
 
-text_uk = load_json_for_uk()
-sections = extract_sections(text_uk)
+def main():
+    text_uk = load_json_for_uk()
+    sections = extract_sections(text_uk)
 
-for section, level in sections:
-    print(f"name:{section}    level:{level}")
+    for section, level in sections:
+        print(f"name:{section}    level:{level}")
+
+if __name__ == '__main__':
+    main()

@@ -58,9 +58,13 @@ def remove_mediawiki_markup(info_d):
     # あとで順番直すかも。
     return new_dict
 
-text_uk = load_json_for_uk()
-info_dict = extract_info(text_uk)
-new_dict = remove_mediawiki_markup(info_dict)
+def main():
+    text_uk = load_json_for_uk()
+    info_dict = extract_info(text_uk)
+    new_dict = remove_mediawiki_markup(info_dict)
 
-for key, value in new_dict.items():
-    print(f"{key} : {value}")
+    for key, value in new_dict.items():
+        print(f"{key} : {value}")
+
+if __name__ == '__main__':
+    main()

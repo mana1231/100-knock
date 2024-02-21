@@ -23,9 +23,13 @@ def rm_markup(info_d):
 
     return new_dict
 
-text_uk = load_json_for_uk()
-info_dict = extract_info(text_uk)
-no_markup = rm_markup(info_dict)
+def main():
+    text_uk = load_json_for_uk()
+    info_dict = extract_info(text_uk)
+    no_markup = rm_markup(info_dict)
 
-for key, value in no_markup.items():
-    print(f"{key} : {value}")
+    for key, value in no_markup.items():
+        print(f"{key} : {value}")
+
+if __name__ == '__main__':
+    main()

@@ -71,11 +71,15 @@ def get_url_for(tgt):
 
     return tgt_url
 
-text_uk = load_json_for_uk()
-info_dict = extract_info(text_uk)
-new_dict = remove_mediawiki_markup(info_dict)
+def main():
+    text_uk = load_json_for_uk()
+    info_dict = extract_info(text_uk)
+    new_dict = remove_mediawiki_markup(info_dict)
 
-flag = new_dict['国旗画像']
+    flag = new_dict['国旗画像']
 
-url = get_url_for(flag)
-print(url)
+    url = get_url_for(flag)
+    print(url)
+
+if __name__ == '__main__':
+    main()

@@ -13,8 +13,12 @@ def extract_category(text):
     
     return category_lines
 
-text_uk = load_json_for_uk()
-category_lines = extract_category(text_uk)
+def main():
+    text_uk = load_json_for_uk()
+    category_lines = extract_category(text_uk)
 
-for line in category_lines:
-    print(line)
+    for line in category_lines:
+        print(line)
+
+if __name__ == '__main__':
+    main()

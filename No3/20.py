@@ -6,5 +6,9 @@ def load_json_for_uk():
 
     return uk_article
 
-text_uk = load_json_for_uk()
-print(text_uk)
+def main():
+    text_uk = load_json_for_uk()
+    print(text_uk)
+
+if __name__ == '__main__':
+    main()
