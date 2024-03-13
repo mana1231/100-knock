@@ -1,11 +1,18 @@
-# ---------------------------
-# need mecab-ipadic-neologd
-# ---------------------------
+# ---------------------------------------------------------------
+# MacOSにて実行
+# brew install mecab
+# brew isntall mecab-ipadic
+# この時、文字化けが起こる場合には
+# brew reinstall --build-from-source mecab
+# brew reinstall --build-from-source mecab-ipadic
+# でOK。事前にneologdとか設定してしまうとchar.binが既存になってしまい
+# エラーを出すのでその時はそのファイルを削除すればOK
+# ---------------------------------------------------------------
 
 import MeCab
 
 def mecab_analysis(text):
-    tokenizer = MeCab.Tagger("-d /opt/homebrew/lib/mecab/dic/mecab-ipadic-neologd")
+    tokenizer = MeCab.Tagger()
     token = tokenizer.parse(text)
     return token
 
@@ -15,7 +22,10 @@ def save_mecab_result(input_file, output_file):
             result = mecab_analysis(line)
             outfile.write(result)
 
-f_in = "neko.txt"
-f_out = "neko.txt.mecab"
+def main():
+    f_in = "neko.txt"
+    f_out = "neko.txt.mecab"
+    save_mecab_result(f_in, f_out)
 
-save_mecab_result(f_in, f_out)
+if __name__ == '__main__':
+    main()
